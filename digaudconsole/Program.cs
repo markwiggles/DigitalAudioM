@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.DirectX.AudioVideoPlayback;
 using System.IO;
 using System.Xml;
+using System.Diagnostics;
 
 namespace digaudconsole
 {
@@ -18,19 +18,29 @@ namespace digaudconsole
         public enum pitchConv { C, Db, D, Eb, E, F, Gb, G, Ab, A, Bb, B };
         public static double bpm = 70;
 
+
         static void Main(string[] args)
         {
+            Stopwatch timer = new Stopwatch();
+
+            timer.Start();
+
             start();
+
+            //calculate and display time
+            long duration = timer.ElapsedMilliseconds;
+            Console.WriteLine("Finished processing: " + duration + " milliseconds");
+            Console.ReadKey();
+
         }
 
         static void start()
         {
-            string filename = "C:\\stuff\\jupiter.wav";
-            string xmlfile = "C:\\stuff\\jupiter.xml";
+            string filename = @"F:\Dropbox\QUT\2013Sem2\INB375\DigitalAudio-trial\digaudconsole\AudioFiles\Jupiter.wav";
+            string xmlfile = @"F:\Dropbox\QUT\2013Sem2\INB375\DigitalAudio-trial\digaudconsole\AudioFiles\Jupiter.xml";
             loadWave(filename);
             freqDomain();
             sheetmusic = readXML(xmlfile);
-           
         }
 
         public static musicnote[] readXML(string filename)
