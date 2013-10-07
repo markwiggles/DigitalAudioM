@@ -90,6 +90,15 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="AudioFiles\B.B.Scale.wav" />
+    <Content Include="AudioFiles\cscale.wav" />
+    <Content Include="AudioFiles\Jupiter.wav" />
+    <Content Include="AudioFiles\Jupiter.xml" />
+    <Content Include="AudioFiles\legatoviolin.wav" />
+    <Content Include="AudioFiles\violin.wav" />
+    <Content Include="AudioFiles\violinscale.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
